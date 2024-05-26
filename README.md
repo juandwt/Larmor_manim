@@ -7,12 +7,15 @@ Ahora describamos la desaceleración que sufrió la carga:
 $$
 \vec{v}_{f}=\vec{v}_{0}+\vec{a}t \rightarrow \vec{0}=\vec{v}_{0}+\vec{a}\tau
 $$
+
 $$
 \vec{a}=-\frac{v_{0}}{\tau}\hat{x} \tag{1}
 $$
 Ahora describamos el campo eléctrico radial el cual esta dado por la ley de Coulomb
+
 $$
 q
+
 $$
 Según el diagrama debe haber una proporción entre la componente radial y tangencial 
 $$
