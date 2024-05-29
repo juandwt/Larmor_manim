@@ -1,5 +1,64 @@
 from manim import *
 
+class aplications(Scene):
+    def construct(self):
+        apt1 = Text("aplicación 1")
+        apt1 = Text("aplicación 2")
+        apt1 = Text("aplicación 3")
+        apt1 = Text("aplicación 4")
+
+class references(Scene):
+    def construct(self):
+        eq3 = MathTex(r"\vec{\nabla} \times \vec{E}&= \frac{\partial E_{z}}{\partial y}\hat{x}=E_{0}\cos(y-vt)\hat{x}")
+        self.play(Create(eq3))
+        self.wait(3)
+
+class relation(Scene):
+    def construct(self):
+        
+        eq1 = MathTex(r"\vec{E}=E_{0}\sin(y-vt)\hat{z}")
+        eq2 = MathTex(r"\vec{B}=B_{0}\sin(y-vt)\hat{x}")
+        eq3 = MathTex(r"\vec{\nabla} \times \vec{E}&= \frac{\partial E_{z}}{\partial y}\hat{x}=E_{0}\cos(y-vt)\hat{x}")
+        eq4 = MathTex(r"\frac{\partial \vec{B}}{\partial t}&=-vB_{0}\cos(y-vt)\hat{x}")
+
+        eq1.shift(UP*2 + LEFT*3.4)
+        eq2.shift(UP*2 + RIGHT*3.9)
+        self.play(Create(eq1), Create(eq2))
+        eq3.shift(LEFT*3)
+        eq4.shift(RIGHT*4)
+        self.play(Create(eq3), Create(eq4))
+
+        
+        eq5 = MathTex(r"\vec{\nabla} \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t}")
+        eq6 = MathTex(r"E_{0}\cos(y-vt)&=vB_{0}\cos(y-vt) ")
+        eq7 = MathTex(r"E_{0}&=vB_{0} =cB_{0}")
+        eq7.set_color_by_gradient("#33ccff","#ff00ff")
+
+        self.play(Uncreate(eq1), Uncreate(eq2))
+        eq5.shift(DOWN*2)
+        self.play(Create(eq5))
+        eq6.shift(UP*2)
+        self.play(Create(eq6))
+        self.play(Uncreate(eq5))
+        self.play(Uncreate(eq3), Uncreate(eq4))
+        self.play(ReplacementTransform(eq6, eq7))
+        
+        
+        eq8 = MathTex(r"|\vec{S}|&=\frac{1}{\mu_{0}}|\vec{E} \times \vec{B}|")
+        eq9 = MathTex(r"\frac{1}{\mu_{0}}\left| |\vec{E}| |\vec{B}|\sin(90^{\circ})\right|")
+        eq10 = MathTex(r"\frac{1}{\mu_{0}} \frac{E^{2}}{c} = \epsilon_{0}cE^{2}")
+        eq11 = MathTex(r"\epsilon_{0}c\left[ \frac{kqa\sin \theta}{c^{2}R} \right]^{2}=\frac{\epsilon_{0}k^{2}q^{2}a^{2}\sin ^{2}\theta}{c^{3}R^{2}}")
+
+        
+        eq12 = MathTex(r"P=\int \mid \vec{S}\mid R^{2} \, d\Omega")
+        eq13 = MathTex(r"P= \int_{0}^{2\pi}\int_{0}^{\pi}  \frac{\epsilon_{0}k^{2}q^{2}a^{2}\sin ^{2}\theta}{c^{3}R^{2}} R^{2} \,d\Omega ")
+        eq14 = MathTex(r"P=\frac{\epsilon_{0}k^{2}q^{2}a^{2}\sin ^{2}\theta}{c^{3}} \int_{0}^{2\pi}\int_{0}^{\pi} \sin ^{3}\theta \,d \theta d\phi")
+        
+        eq15 = MathTex(r"P=\frac{q^{2}a^{2}}{6\pi \epsilon_{0}c^{3}}")
+        eq15.set_color_by_gradient("#33ccff","#ff00ff")
+        self.wait(3)
+        
+
 class Wave(MovingCameraScene):
     def construct(self):
         # Crear y animar el sistema de coordenadas sin los números de la escala y con un color de cuadrícula personalizado
